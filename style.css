@@ -631,3 +631,46 @@ button {
     background: var(--navy);
     color: var(--white);
 }
+
+   /* --- FIX TOP BAR FOR MOBILE --- */
+@media (max-width: 768px) {
+  .top-bar, header .top, .header-top {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 10px !important;
+    gap: 8px;
+    text-align: center;
+  }
+  
+  /* Stop phone number from breaking */
+  .top-bar span, .top-bar a, .contact-info a {
+    white-space: nowrap !important;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  nav, .navbar {
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  nav ul, .navbar ul, .nav-links {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    gap: 15px !important;
+    padding-bottom: 5px;
+  }
+
+  /* Hide scrollbar but keep scroll */
+  nav ul::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Force no horizontal scroll for whole site */
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
