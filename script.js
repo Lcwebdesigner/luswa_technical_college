@@ -210,7 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!valid) return;
 
         success.textContent =
-            "Application details validated successfully. go and login upob successfull registration.";
+            "Application details validated successfull. Contact Luswa for Account Activation.";
         success.classList.add("show");
         form.reset();
         success.scrollIntoView({ behavior: "smooth", block: "nearest" });
