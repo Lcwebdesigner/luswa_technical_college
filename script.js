@@ -210,7 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!valid) return;
 
         success.textContent =
-            "Application details validated successfully. This demo form is ready to be connected to a backend.";
+            "Application details validated successfully. go and login upob successfull registration.";
         success.classList.add("show");
         form.reset();
         success.scrollIntoView({ behavior: "smooth", block: "nearest" });
