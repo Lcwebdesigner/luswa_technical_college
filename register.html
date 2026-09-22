@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create your Luswa Technical College student account.">
+    <meta name="theme-color" content="#071f35">
+    <title>Create Account | Luswa Technical College</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        .auth-wrap { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--light); padding: 40px 20px; }
+        .auth-box { width: 100%; max-width: 460px; background: var(--white); border: 1px solid var(--border); border-radius: 20px; box-shadow: var(--shadow); padding: 34px 30px; }
+        .auth-box .brand { justify-content: center; margin-bottom: 22px; }
+        .auth-box h1 { font-family: "Montserrat"; color: var(--navy); font-size: 24px; text-align: center; margin-bottom: 6px; }
+        .auth-box > p.sub { text-align: center; color: var(--muted); font-size: 13px; margin-bottom: 24px; }
+        .auth-box label { display: block; color: var(--navy); font-size: 12px; font-weight: 800; margin-bottom: 16px; }
+        .auth-box input { width: 100%; margin-top: 7px; padding: 13px 14px; border: 1px solid var(--border); border-radius: 9px; outline: none; background: #fbfcfd; }
+        .auth-box input:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(217,165,45,.12); background: var(--white); }
+        .auth-alert { display: none; padding: 12px 14px; border-radius: 8px; font-size: 12px; font-weight: 700; margin-bottom: 18px; }
+        .auth-alert.show { display: block; }
+        .auth-alert.error { background: #fdecec; color: #c0392b; }
+        .auth-alert.success { background: #eaf8ef; color: #217a3a; }
+        .auth-foot { text-align: center; margin-top: 18px; font-size: 13px; color: var(--muted); }
+        .auth-foot a { color: var(--blue); font-weight: 700; }
+        .submit-btn[disabled] { opacity: .6; cursor: not-allowed; }
+    </style>
+</head>
+<body>
+    <div class="auth-wrap">
+        <div class="auth-box">
+            <a href="index.html" class="brand" aria-label="Luswa Technical College home">
+                <img src="images/logo.png" alt="Luswa Technical College logo" style="width:44px;height:44px;">
+                <span><strong style="font-family:'Montserrat';color:var(--navy);">LUSWA</strong></span>
+            </a>
+            <h1>Create your student account</h1>
+            <p class="sub">Start your application to Luswa Technical College</p>
+
+            <div class="auth-alert" id="authAlert" role="status"></div>
+
+            <form id="registerForm" novalidate>
+                <label>
+                    Full name
+                    <input type="text" name="fullName" placeholder="Enter your full name" required>
+                    <small class="error-message"></small>
+                </label>
+                <label>
+                    Email address
+                    <input type="email" name="email" placeholder="you@example.com" required>
+                    <small class="error-message"></small>
+                </label>
+                <label>
+                    Phone number
+                    <input type="tel" name="phone" placeholder="e.g. 07XXXXXXXX" required>
+                    <small class="error-message"></small>
+                </label>
+                <label>
+                    Password
+                    <input type="password" name="password" placeholder="At least 8 characters" required minlength="8">
+                    <small class="error-message"></small>
+                </label>
+                <label>
+                    Confirm password
+                    <input type="password" name="confirmPassword" placeholder="Re-enter your password" required>
+                    <small class="error-message"></small>
+                </label>
+
+                <button type="submit" class="btn btn-primary submit-btn" id="registerBtn">
+                    Create Account <i class="fas fa-arrow-right"></i>
+                </button>
+            </form>
+
+            <p class="auth-foot">Already have an account? <a href="login.html">Log in</a></p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script src="supabase-config.js"></script>
+    <script src="auth-register.js"></script>
+</body>
+</html>
